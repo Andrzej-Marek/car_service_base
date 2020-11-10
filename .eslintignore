@@ -1,0 +1,3 @@
+src/**/*.scss.d.ts
+webpack.common.js
+webpack.local.js
