@@ -2,9 +2,7 @@ import React, { FC } from "react";
 import { media } from "@/shared/utils";
 import styled from "styled-components";
 
-interface OwnProps {
-    children: JSX.Element
-}
+interface OwnProps {}
 
 type Props = OwnProps;
 
@@ -23,16 +21,12 @@ const ContainerWrapper = styled.div`
     margin-left: auto;
     padding: 0 20px;
 
-    ${media.tablet`
-         max-width: 750px;
-    `}
-
     ${media.laptop`
-        max-width: 970px;
+        width: 85vw;
     `}
 
     ${media.laptopL`
-        max-width: 1150px;
+        width: 75vw;
     `}
 `;
 

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { PrimaryButton } from "./components";
 import { GlobalStyle } from "./shared/styles";
-import Container from './components/Container/Container';
+import { Container } from './components';
 
 interface OwnProps {}
 
@@ -12,8 +12,10 @@ const App: FC<Props> = () => {
         <>
             <GlobalStyle />
             <Container>
-                <p>Welcome to my starter!</p>
-                <PrimaryButton text="Hello world" width="150px" />
+                <>
+                    <p>Welcome to my starter!</p>
+                    <PrimaryButton text="Hello world" width="150px" />
+                </>
             </Container>
         </>
     );
