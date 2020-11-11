@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import styled from "styled-components";
 import { PrimaryButton } from "./components";
 import { GlobalStyle } from "./shared/styles";
+import Container from './components/Container/Container';
 
 interface OwnProps {}
 
@@ -11,21 +11,12 @@ const App: FC<Props> = () => {
     return (
         <>
             <GlobalStyle />
-            <ContentWrapper>
+            <Container>
                 <p>Welcome to my starter!</p>
                 <PrimaryButton text="Hello world" width="150px" />
-            </ContentWrapper>
+            </Container>
         </>
     );
 };
-
-const ContentWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    height: 100vh;
-`;
 
 export default App;
