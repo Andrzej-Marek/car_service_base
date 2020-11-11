@@ -5,7 +5,7 @@ interface OwnProps {}
 
 type Props = OwnProps;
 
-const Tile: FC<Props> = ({ children }) => {
+const TileMain: FC<Props> = ({ children }) => {
 
     return (
         <TileWrapper>
@@ -21,4 +21,4 @@ const TileWrapper = styled.div`
 `;
 
 
-export default Tile;
+export default TileMain;

@@ -12,7 +12,12 @@ const App: FC<Props> = () => {
         <>
             <GlobalStyle />
             <ContentWrapper>
-                <Tile/>
+
+                <TileWrapper>
+                    <Tile/>
+                    
+                </TileWrapper>
+
                 <p>Welcome to my starter!</p>
                 <PrimaryButton text="Hello world" width="150px" />
             </ContentWrapper>
@@ -27,6 +32,11 @@ const ContentWrapper = styled.div`
     flex-direction: column;
 
     height: 100vh;
+`;
+
+const TileWrapper = styled.div`
+    display: flex;
+    width: 500px;
 `;
 
 export default App;
