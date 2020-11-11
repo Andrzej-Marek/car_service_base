@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { PrimaryButton } from "./components";
+import { PrimaryButton, Tile } from "./components";
 import { GlobalStyle } from "./shared/styles";
 
 interface OwnProps {}
@@ -12,6 +12,7 @@ const App: FC<Props> = () => {
         <>
             <GlobalStyle />
             <ContentWrapper>
+                <Tile/>
                 <p>Welcome to my starter!</p>
                 <PrimaryButton text="Hello world" width="150px" />
             </ContentWrapper>
