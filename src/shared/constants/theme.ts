@@ -4,7 +4,8 @@ export const theme = {
         primaryBlue: "#2E3A67",
         primaryGreen: "#0CDAAC",
         background: "#F5F6F8",
-        grey: "#C7CAD3",
+        gray: "#C7CAD3",
+        light_gray: "#E5E5E5",
     },
     iconSize: {},
     radius: {
@@ -12,8 +13,15 @@ export const theme = {
         normal: "6px",
         big: "12px,",
     },
-    fontSize: {},
-    boxShadow: {},
+    fontSize: {
+        big: "22px"
+    },
+    fontWeight: {
+        bold: "700"
+    },
+    boxShadow: {
+        primary: `0px 2px 12px 0px #E5E5E5`
+    },
     space: {},
 };
 

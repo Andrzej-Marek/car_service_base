@@ -1,14 +1,17 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-interface OwnProps {}
+interface OwnProps {
+    title?: string
+}
 
 type Props = OwnProps;
 
-const Tile: FC<Props> = ({ children }) => {
+const Tile: FC<Props> = ({ title, children }) => {
 
     return (
         <TileWrapper>
+            {title && <Title> {title} </Title>}
             {children}
         </TileWrapper>
     )
@@ -17,8 +20,14 @@ const Tile: FC<Props> = ({ children }) => {
 const TileWrapper = styled.div`
     padding: 20px 30px;
     border-radius: 8px;
-    box-shadow: 0px 2px 12px 0px #E5E5E5;
+    box-shadow: ${({ theme }) => theme.boxShadow.primary};
 `;
 
+const Title = styled.p`
+    color: ${({ theme }) => theme.color.primaryBlue};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    font-size: ${({ theme }) => theme.fontSize.big};
+
+`;
 
 export default Tile;
