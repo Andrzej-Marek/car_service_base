@@ -13,9 +13,7 @@ const App: FC<Props> = () => {
         <MainWrapper>
             <GlobalStyle />
             <Container>
-                <>
-                    <PrimaryButton text="Hello world" width="150px" />
-                </>
+                <PrimaryButton text="Hello world" width="150px" />
             </Container>
         </MainWrapper>
     );
@@ -23,7 +21,7 @@ const App: FC<Props> = () => {
 
 const MainWrapper = styled.div`
     height: 100vh;
-    background: #E5E5E5;
+    background: ${({theme}) => theme.color.background};
 `;
 
 export default App;

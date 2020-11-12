@@ -16,10 +16,14 @@ const Container: FC<Props> = ({ children }) => {
 }
 
 const ContainerWrapper = styled.div`
-    max-width: 100%;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 20px;
+    padding: 0 10px;
+
+    ${media.mobileL`
+        padding: 0 20px;
+    `}
 
     ${media.laptop`
         width: 85vw;
