@@ -1,18 +1,21 @@
 import React, { FC } from "react";
-import { ServiceTile } from "./components";
+import styled from "styled-components";
+import ServiceTiles from "./components/ServiceTiles/ServiceTiles";
 
-interface OwnProps{};
+interface OwnProps{
+    title: string
+};
 
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-
     return (
         <div>
             service details
-            <ServiceTile/>
+            <ServiceTiles/>
         </div>
     );
 };
+
 
 export default ServiceDetails;

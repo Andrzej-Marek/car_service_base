@@ -13,7 +13,8 @@ export const theme = {
         big: "12px,",
     },
     fontSize: {
-        big: "22px"
+        big: "22px",
+        small: "14px"
     },
     fontWeight: {
         bold: "700"
