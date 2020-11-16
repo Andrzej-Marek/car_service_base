@@ -4,16 +4,16 @@ import styled from "styled-components";
 
 interface OwnProps {
     label: string;
-    value: string;
+    value?: string;
 }
 
 type Props = OwnProps;
 
-const ListElement: FC<Props> = ({ label, value }) => {
+const ListElement: FC<Props> = ({ children, label, value }) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
-            <ListValue>{value ?? "-"}</ListValue>
+            <ListValue>{value ? value : children}</ListValue>
         </ListElementWrapper>
     );
 };
@@ -31,6 +31,7 @@ const ListElementWrapper = styled.div`
 `;
 
 const ListKey = styled.div`
+    align-self: flex-start;
     width: 110px;
 `;
 
