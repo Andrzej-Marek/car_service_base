@@ -10,21 +10,21 @@ type Props = OwnProps;
 
 const CarDetailsList: FC<Props> = () => {
 
-    const { t } = useTranslation(["tile"]);
+    const { t } = useTranslation("carSpecification");
 
     return (
         <ListWrapper>
             <Column>
-                <ListElement label={t("tile:carDetails.mark")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.model")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.yearProduction")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.mileage")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.mark")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.model")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.yearProduction")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.mileage")} value="Mercedes Benz" />
             </Column>
             <Column>
-                <ListElement label={t("tile:carDetails.capacity")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.enginePower")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.numberVin")} value="Mercedes Benz" />
-                <ListElement label={t("tile:carDetails.registration")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.capacity")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.enginePower")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.numberVin")} value="Mercedes Benz" />
+                <ListElement label={t("carSpecification:carDetails.registration")} value="Mercedes Benz" />
             </Column>
         </ListWrapper>
     );

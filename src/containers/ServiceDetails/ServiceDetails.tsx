@@ -9,11 +9,11 @@ type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
 
-    const { t } = useTranslation(["tile"]);
+    const { t } = useTranslation("carSpecification");
 
     return (
         <Wrapper>
-            <ContentTile title={t("tile:carDetails.title")}>
+            <ContentTile title={t("carSpecification:carDetails.title")}>
                 <CarDetailsList />
             </ContentTile>
             <ContentTile title="Nowa kafelka">

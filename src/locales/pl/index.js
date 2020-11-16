@@ -1,7 +1,7 @@
 import common from "./common.json";
-import tile from "./tile.json";
+import carSpecification from "./carSpecification.json";
 
 export default {
     common,
-    tile
+    carSpecification
 };
