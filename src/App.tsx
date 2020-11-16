@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { PrimaryButton } from "./components";
 import { GlobalStyle } from "./shared/styles";
-import { Container } from './components';
+import { Container } from "./components";
 import styled from "styled-components";
+import ServiceDetails from "./containers/ServiceDetails/ServiceDetails";
 
 interface OwnProps {}
 
@@ -13,7 +13,7 @@ const App: FC<Props> = () => {
         <MainWrapper>
             <GlobalStyle />
             <Container>
-                <PrimaryButton text="Hello world" width="150px" />
+                <ServiceDetails />
             </Container>
         </MainWrapper>
     );
@@ -21,7 +21,7 @@ const App: FC<Props> = () => {
 
 const MainWrapper = styled.div`
     height: 100vh;
-    background: ${({theme}) => theme.color.background};
+    background: ${({ theme }) => theme.color.background};
 `;
 
 export default App;
