@@ -8,12 +8,16 @@ export const theme = {
     },
     iconSize: {},
     radius: {
-        small: "3px",
-        normal: "6px",
-        big: "12px,",
+        small: "2px",
+        normal: "4px",
+        big: "6px,",
     },
-    fontSize: {},
-    boxShadow: {},
+    fontSize: {
+        tileTitle: "16px",
+    },
+    boxShadow: {
+        tile: "0px 2px 12px 3px #E5E5E5;",
+    },
     space: {},
 };
 
