@@ -15,16 +15,16 @@ const CarDetailsList: FC<Props> = () => {
     return (
         <ListWrapper>
             <Column>
-                <ListElement label={t("carSpecification:carDetails.mark")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.model")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.yearProduction")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.mileage")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.mark")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.model")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.yearProduction")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.mileage")} value="Mercedes Benz" />
             </Column>
             <Column>
-                <ListElement label={t("carSpecification:carDetails.capacity")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.enginePower")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.numberVin")} value="Mercedes Benz" />
-                <ListElement label={t("carSpecification:carDetails.registration")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.capacity")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.enginePower")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.numberVin")} value="Mercedes Benz" />
+                <ListElement label={t("carDetails.registration")} value="Mercedes Benz" />
             </Column>
         </ListWrapper>
     );

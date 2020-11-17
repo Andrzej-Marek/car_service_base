@@ -13,7 +13,7 @@ const ServiceDetails: FC<Props> = () => {
 
     return (
         <Wrapper>
-            <ContentTile title={t("carSpecification:carDetails.title")}>
+            <ContentTile title={t("carDetails.title")}>
                 <CarDetailsList />
             </ContentTile>
             <ContentTile title="Nowa kafelka">
