@@ -1,18 +1,22 @@
 import React, { FC } from "react";
 import { CarDetailsList, ContentTile, ServiceListInfo } from "@/components";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
+
+    const { t } = useTranslation("contentTile");
+
     return (
         <Wrapper>
-            <ContentTile title="Dane samochodu">
+            <ContentTile title={t("carData")}>
                 <CarDetailsList />
             </ContentTile>
-            <ContentTile title="Serwis">
+            <ContentTile title={t("service")}>
                 <ServiceListInfo/>
             </ContentTile>
         </Wrapper>

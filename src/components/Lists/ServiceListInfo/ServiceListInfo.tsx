@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import styled from "styled-components";
-import { ListElement } from '../components';
+import { ListElement , ListServiceElement } from '../components';
 import { useTranslation } from "react-i18next";
 
 interface OwnProps {}
@@ -13,20 +12,11 @@ const ServiceListInfo: FC<Props> = () => {
 
     return (
         <div>
-            <ListElement label={t("serviceDetails:serviceDetails.date")} value="22.02.2020"/>
-            <ListElement label={t("serviceDetails:serviceDetails.serviceNumber")} value="01/02/2020"/>
-            <ListElement label={t("serviceDetails:serviceDetails.service")}>
-                <Text>EXELO s.c</Text>
-                <Text>ul Pszczyńska 16</Text>
-                <Text>43-254 Warszowice</Text>
-            </ListElement>
-
+            <ListElement label={t("date")} value="22.02.2020"/>
+            <ListElement label={t("serviceNumber")} value="01/02/2020"/>
+            <ListServiceElement label={t("service")} company="EXELO s.c" street="ul Pszczyńska 116" address="43-254 Warszowice"/>
         </div>
     )
 }
-
-const Text = styled.p`
-    margin: 0;
-`
 
 export default ServiceListInfo;

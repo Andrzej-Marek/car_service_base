@@ -1,7 +1,5 @@
 {
-    "serviceDetails": {
-        "date": "Data",
-        "serviceNumber": "Nr.Serwisu",
-        "service": "Serwis"
-    }
+    "date": "Data",
+    "serviceNumber": "Nr.Serwisu",
+    "service": "Serwis"
 }
