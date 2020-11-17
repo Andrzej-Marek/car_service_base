@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { CarDetailsList, ContentTile } from "@/components";
+import { CarDetailsList, ContentTile, OthersInfoList } from "@/components";
 import styled from "styled-components";
 
 interface OwnProps {}
@@ -14,6 +14,9 @@ const ServiceDetails: FC<Props> = () => {
             </ContentTile>
             <ContentTile title="Nowa kafelka">
                 <div>Hello world</div>
+            </ContentTile>
+            <ContentTile title="Pozostałe informacje">
+                <OthersInfoList/>
             </ContentTile>
         </Wrapper>
     );
