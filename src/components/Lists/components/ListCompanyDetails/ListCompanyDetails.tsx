@@ -11,7 +11,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const ListServiceElement: FC<Props> = ({ label, company, street, address}) => {
+const ListCompanyDetails: FC<Props> = ({ label, company, street, address}) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
@@ -47,4 +47,4 @@ const ListValue = styled.div`
     font-weight: 700;
 `;
 
-export default ListServiceElement;
+export default ListCompanyDetails;
