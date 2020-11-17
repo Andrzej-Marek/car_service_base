@@ -11,3 +11,4 @@ export { default as ContentTile } from "./Tiles/ContentTile/ContentTile";
 // Lists
 
 export { default as CarDetailsList } from "./Lists/CarDetailsList/CarDetailsList";
+export { default as BasicDescriptionList } from "./Lists/BasicDescriptionList/BasicDescriptionList";
