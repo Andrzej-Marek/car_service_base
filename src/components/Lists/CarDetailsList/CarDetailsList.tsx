@@ -9,7 +9,6 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const CarDetailsList: FC<Props> = () => {
-
     const { t } = useTranslation("carSpecification");
 
     return (
@@ -17,7 +16,10 @@ const CarDetailsList: FC<Props> = () => {
             <Column>
                 <ListElement label={t("carDetails.mark")} value="Mercedes Benz" />
                 <ListElement label={t("carDetails.model")} value="Mercedes Benz" />
-                <ListElement label={t("carDetails.yearProduction")} value="Mercedes Benz" />
+                <ListElement
+                    label={t("carDetails.yearProduction")}
+                    value="Mercedes Benzadsasdasda dasd asd asd asd ad "
+                />
                 <ListElement label={t("carDetails.mileage")} value="Mercedes Benz" />
             </Column>
             <Column>
@@ -38,7 +40,7 @@ const ListWrapper = styled.div`
 
 const Column = styled.div`
     ${media.tablet`
-            width: 300px;        
+        width: 250px;        
     `};
 `;
 

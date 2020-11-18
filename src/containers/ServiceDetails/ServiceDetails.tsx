@@ -1,19 +1,16 @@
 import React, { FC } from "react";
-import { CarDetailsList, ContentTile, ServiceListInfo } from "@/components";
-import styled from "styled-components";
-import { CarDetailsList, ContentTile, Table } from "@/components";
+import { CarDetailsList, ContentTile, Grid43, ServiceListInfo } from "@/components";
 import styled from "styled-components";
 import { Currency } from "@/shared/enums";
 import { ServiceCost } from "@/shared/types";
-import { serviceDetailsColumns } from "./serviceDetails.columns";
 import { useTranslation } from "react-i18next";
+import { media } from "@/shared/utils";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-
     const { t } = useTranslation(["carSpecification", "serviceCosts"]);
 
     // TODO: Mapper for this structure and pass curreny to columns
@@ -46,12 +43,14 @@ const ServiceDetails: FC<Props> = () => {
 
     return (
         <Wrapper>
-            <ContentTile title={t("carSpecification:carDetails.title")}>
-                <CarDetailsList />
-            </ContentTile>
-            <ContentTile title={t("serviceCosts:costs")}>
-                <Table columns={serviceDetailsColumns} data={mockData} />
-            </ContentTile>
+            <Grid43>
+                <ContentTile title={t("carSpecification:carDetails.title")}>
+                    <CarDetailsList />
+                </ContentTile>
+                <ContentTile title={t("carSpecification:carDetails.title")}>
+                    <ServiceListInfo />
+                </ContentTile>
+            </Grid43>
         </Wrapper>
     );
 };

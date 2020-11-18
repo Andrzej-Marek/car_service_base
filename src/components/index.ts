@@ -21,3 +21,8 @@ export { default as Table } from "./Table/Table";
 // Footers
 export { default as TableFooterRowSummary } from "./TableFooterRowSummary/TableFooterRowSummary";
 
+// Grid
+
+export { default as Grid11 } from "./Grid/Grid11/Grid11";
+
+export { default as Grid43 } from "./Grid/Grid43/Grid43";
