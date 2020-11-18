@@ -11,7 +11,9 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-    const { t } = useTranslation("serviceCosts");
+
+    const { t } = useTranslation(["carSpecification", "serviceCosts"]);
+
     // TODO: Mapper for this structure and pass curreny to columns
     const mockData: ServiceCost[] = [
         {
@@ -42,10 +44,10 @@ const ServiceDetails: FC<Props> = () => {
 
     return (
         <Wrapper>
-            <ContentTile title="Dane samochodu">
+            <ContentTile title={t("carSpecification:carDetails.title")}>
                 <CarDetailsList />
             </ContentTile>
-            <ContentTile title={t("costs")}>
+            <ContentTile title={t("serviceCosts:costs")}>
                 <Table columns={serviceDetailsColumns} data={mockData} />
             </ContentTile>
         </Wrapper>
