@@ -1,8 +1,29 @@
 {
-    "carDetails": {
-        "title": "Dane samochodu"
+    "vehicleDetails": {
+        "title": "Dane pojazdu"
     },
     "servisTile": {
         "title": "Serwis"
+    },
+    "lastServisTile": {
+        "title": "Ostatni serwis"
+    },
+    "costTile": {
+        "title": "Koszty"
+    },
+    "diagnosisTile": {
+        "title": "Diagnoza"
+    },
+    "servisDescriptionTile": {
+        "title": "Opis serwisu"
+    },
+    "otherInformationTile": {
+        "title": "Inne informacje"
+    },
+    "photosTile": {
+        "title": "Zdjęcia serwisowe"
+    },
+    "commentsTile": {
+        "title": "Uwagi"
     }
 }

@@ -29,7 +29,7 @@ const Title = styled.div`
     padding-bottom: 10px;
 
     ${media.laptop`
-        padding: 0 10px 15px 10px;
+        padding: 0 10px 15px 0;
         font-size: ${({ theme }) => theme.fontSize.large};
     `}
 `;

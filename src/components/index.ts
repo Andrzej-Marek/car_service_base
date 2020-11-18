@@ -14,9 +14,10 @@ export { default as VehicleDetailsList } from "./Lists/VehicleDetailsList/Vehicl
 
 export { default as BasicServiceListInfo } from "./Lists/BasicServiceListInfo/BasicServiceListInfo";
 
-export { default as Table } from "./Table/Table";
+export { default as PhotosList } from "./Lists/PhotosList/PhotosList";
 
 // Table
+export { default as Table } from "./Table/Table";
 
 // Footers
 export { default as TableFooterRowSummary } from "./TableFooterRowSummary/TableFooterRowSummary";
@@ -28,3 +29,6 @@ export { default as Grid11 } from "./Grid/Grid11/Grid11";
 export { default as Grid43 } from "./Grid/Grid43/Grid43";
 
 export { default as GridFull } from "./Grid/GridFull/GridFull";
+
+// Text
+export { default as BasicTileText } from "./Text/BasicTileText/BasicTileText";

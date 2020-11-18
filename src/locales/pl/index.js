@@ -1,10 +1,12 @@
 import common from "./common.json";
+import tile from "./tile.json";
 import serviceDetails from "./serviceDetails.json";
 import contentTile from "./contentTile.json";
 import serviceCosts from "./serviceCosts.json";
 import vehicleSpecification from "./vehicleSpecification.json";
 
 export default {
+    tile,
     common,
     serviceDetails,
     contentTile,

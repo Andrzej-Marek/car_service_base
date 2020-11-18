@@ -6,6 +6,9 @@ import {
     Table,
     GridFull,
     BasicServiceListInfo,
+    Grid11,
+    BasicTileText,
+    PhotosList,
 } from "@/components";
 import styled from "styled-components";
 import { Currency } from "@/shared/enums";
@@ -18,7 +21,7 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-    const { t } = useTranslation(["vehicleSpecification", "serviceDetails"]);
+    const { t } = useTranslation("tile");
 
     // TODO: Mapper for this structure and pass curreny to columns
     const mockData: ServiceCost[] = [
@@ -51,16 +54,42 @@ const ServiceDetails: FC<Props> = () => {
     return (
         <Wrapper>
             <Grid43>
-                <ContentTile title={t("vehicleSpecification:title")}>
+                <ContentTile title={t("vehicleDetails.title")}>
                     <VehicleDetailsList />
                 </ContentTile>
-                <ContentTile title={t("serviceDetails:title")}>
+                <ContentTile title={t("servisTile.title")}>
                     <BasicServiceListInfo />
                 </ContentTile>
             </Grid43>
+            <Grid11>
+                <ContentTile title={t("diagnosisTile.title")}>
+                    <BasicTileText
+                        text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                    />
+                </ContentTile>
+                <ContentTile title={t("servisDescriptionTile.title")}>
+                    <BasicTileText text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." />
+                </ContentTile>
+            </Grid11>
             <GridFull>
-                <ContentTile title={t("title")}>
+                <ContentTile title={t("costTile.title")}>
                     <Table data={mockData} columns={serviceDetailsColumns} />
+                </ContentTile>
+            </GridFull>
+            <GridFull>
+                <ContentTile title={t("otherInformationTile.title")}>
+                    <div>Hello</div>
+                </ContentTile>
+            </GridFull>
+            <GridFull>
+                <ContentTile title={t("photosTile.title")}>
+                    <PhotosList />
+                </ContentTile>
+            </GridFull>
+            <GridFull>
+                <ContentTile title={t("commentsTile.title")}>
+                    <BasicTileText text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has " />
                 </ContentTile>
             </GridFull>
         </Wrapper>

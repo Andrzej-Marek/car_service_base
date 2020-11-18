@@ -12,17 +12,20 @@ const Grid11: FC<Props> = ({ children }) => {
 
 const Wrapper = styled.div`
     display: grid;
+    padding-top: 20px;
     grid-row-gap: 20px;
 
     ${media.laptop`
         display: grid; 
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 15px; 
+        padding-top: 15px;
     `}
 
     ${media.laptopL`
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 25px; 
+        padding-top: 25px;
     `}
 `;
 
