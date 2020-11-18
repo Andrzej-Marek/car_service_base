@@ -1,3 +1,7 @@
 {
-    "hello": "Welcome!"
+    "hello": "Welcome!",
+    "units": {
+        "meters": "Metry",
+        "kilos": "Kilogramy"
+    }
 }

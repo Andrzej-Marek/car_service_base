@@ -1,0 +1,11 @@
+{
+    "costs": "Koszty",
+    "fields": {
+        "title": "Nazwa",
+        "lp": "Lp.",
+        "quantity": "Ilość",
+        "netPrice": "Cena netto",
+        "grossPrice": "Cena brutto",
+        "summary": "Razem"
+    }
+}
