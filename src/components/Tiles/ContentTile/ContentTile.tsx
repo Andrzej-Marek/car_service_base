@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { TileWrapper } from "@/shared/styles";
 import styled from "styled-components";
+import { media } from "@/shared/utils";
 
 interface OwnProps {
     title: string;
@@ -22,10 +23,15 @@ const StyledTileWrapper = styled(TileWrapper)`
 `;
 
 const Title = styled.div`
-    font-size: ${({ theme }) => theme.fontSize.tileTitle};
+    font-size: ${({ theme }) => theme.fontSize.title};
     color: ${({ theme }) => theme.color.primaryBlue};
     font-weight: 700;
     padding-bottom: 10px;
+
+    ${media.laptop`
+        padding: 10px;
+        font-size: ${({ theme }) => theme.fontSize.large};
+    `}
 `;
 
 export default ContentTile;

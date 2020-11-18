@@ -13,7 +13,10 @@ export const theme = {
         big: "6px,",
     },
     fontSize: {
-        tileTitle: "16px",
+        small: "12px",
+        normal: "14px",
+        title: "16px",
+        large: "22px",
     },
     boxShadow: {
         tile: "0px 2px 12px 3px #E5E5E5;",
