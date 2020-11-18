@@ -12,9 +12,12 @@ export { default as ContentTile } from "./Tiles/ContentTile/ContentTile";
 
 export { default as CarDetailsList } from "./Lists/CarDetailsList/CarDetailsList";
 
+export { default as ServiceListInfo } from "./Lists/ServiceListInfo/ServiceListInfo";
+
 export { default as Table } from "./Table/Table";
 
 // Table
 
 // Footers
 export { default as TableFooterRowSummary } from "./TableFooterRowSummary/TableFooterRowSummary";
+

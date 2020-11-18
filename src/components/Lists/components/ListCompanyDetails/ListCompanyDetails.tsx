@@ -4,16 +4,22 @@ import styled from "styled-components";
 
 interface OwnProps {
     label: string;
-    value: string;
+    company: string;
+    street: string;
+    address: string;
 }
 
 type Props = OwnProps;
 
-const ListElement: FC<Props> = ({label, value }) => {
+const ListCompanyDetails: FC<Props> = ({ label, company, street, address}) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
-            <ListValue>{value ?? "-"}</ListValue>
+            <div>
+                <ListValue>{company}</ListValue>
+                <ListValue>{street}</ListValue>
+                <ListValue>{address}</ListValue>
+            </div>
         </ListElementWrapper>
     );
 };
@@ -32,6 +38,7 @@ const ListElementWrapper = styled.div`
 
 const ListKey = styled.div`
     color: ${({ theme }) => theme.color.primaryBlue};
+    align-self: flex-start;
     width: 110px;
 `;
 
@@ -40,4 +47,4 @@ const ListValue = styled.div`
     font-weight: 700;
 `;
 
-export default ListElement;
+export default ListCompanyDetails;
