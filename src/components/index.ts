@@ -10,9 +10,9 @@ export { default as ContentTile } from "./Tiles/ContentTile/ContentTile";
 
 // Lists
 
-export { default as CarDetailsList } from "./Lists/CarDetailsList/CarDetailsList";
+export { default as VehicleDetailsList } from "./Lists/VehicleDetailsList/VehicleDetailsList";
 
-export { default as ServiceListInfo } from "./Lists/ServiceListInfo/ServiceListInfo";
+export { default as BasicServiceListInfo } from "./Lists/BasicServiceListInfo/BasicServiceListInfo";
 
 export { default as Table } from "./Table/Table";
 
@@ -26,3 +26,5 @@ export { default as TableFooterRowSummary } from "./TableFooterRowSummary/TableF
 export { default as Grid11 } from "./Grid/Grid11/Grid11";
 
 export { default as Grid43 } from "./Grid/Grid43/Grid43";
+
+export { default as GridFull } from "./Grid/GridFull/GridFull";

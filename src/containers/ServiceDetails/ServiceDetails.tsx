@@ -1,17 +1,24 @@
 import React, { FC } from "react";
-import { CarDetailsList, ContentTile, Grid43, ServiceListInfo } from "@/components";
+import {
+    VehicleDetailsList,
+    ContentTile,
+    Grid43,
+    Table,
+    GridFull,
+    BasicServiceListInfo,
+} from "@/components";
 import styled from "styled-components";
 import { Currency } from "@/shared/enums";
 import { ServiceCost } from "@/shared/types";
 import { useTranslation } from "react-i18next";
-import { media } from "@/shared/utils";
+import { serviceDetailsColumns } from "./serviceDetails.columns";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-    const { t } = useTranslation(["carSpecification", "serviceCosts"]);
+    const { t } = useTranslation(["vehicleSpecification", "serviceDetails"]);
 
     // TODO: Mapper for this structure and pass curreny to columns
     const mockData: ServiceCost[] = [
@@ -44,13 +51,18 @@ const ServiceDetails: FC<Props> = () => {
     return (
         <Wrapper>
             <Grid43>
-                <ContentTile title={t("carSpecification:carDetails.title")}>
-                    <CarDetailsList />
+                <ContentTile title={t("vehicleSpecification:title")}>
+                    <VehicleDetailsList />
                 </ContentTile>
-                <ContentTile title={t("carSpecification:carDetails.title")}>
-                    <ServiceListInfo />
+                <ContentTile title={t("serviceDetails:title")}>
+                    <BasicServiceListInfo />
                 </ContentTile>
             </Grid43>
+            <GridFull>
+                <ContentTile title={t("title")}>
+                    <Table data={mockData} columns={serviceDetailsColumns} />
+                </ContentTile>
+            </GridFull>
         </Wrapper>
     );
 };

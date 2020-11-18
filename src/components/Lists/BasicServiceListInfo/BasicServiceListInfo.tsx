@@ -7,7 +7,7 @@ interface OwnProps {}
 
 type Props = OwnProps;
 
-const ServiceListInfo: FC<Props> = () => {
+const BasicServiceListInfo: FC<Props> = () => {
     const { t } = useTranslation("serviceDetails");
 
     return (
@@ -26,4 +26,4 @@ const ServiceListInfo: FC<Props> = () => {
 
 const Wrapper = styled.div``;
 
-export default ServiceListInfo;
+export default BasicServiceListInfo;
