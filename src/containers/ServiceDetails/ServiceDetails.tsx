@@ -1,15 +1,19 @@
 import React, { FC } from "react";
-import { CarDetailsList, ContentTile, Table, TableFooterRowSummary } from "@/components";
+import { CarDetailsList, ContentTile, Table } from "@/components";
 import styled from "styled-components";
 import { Currency } from "@/shared/enums";
-import { ServiceCost, TableColumn } from "@/shared/types";
+import { ServiceCost } from "@/shared/types";
+import { serviceDetailsColumns } from "./serviceDetails.columns";
+import { useTranslation } from "react-i18next";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
-    const data: ServiceCost[] = [
+    const { t } = useTranslation("serviceCosts");
+    // TODO: Mapper for this structure and pass curreny to columns
+    const mockData: ServiceCost[] = [
         {
             id: 1,
             title: "Sprzęgło kompresora",
@@ -20,7 +24,7 @@ const ServiceDetails: FC<Props> = () => {
         },
         {
             id: 2,
-            title: "Sprzęgło kompresora2 Sprzęgło kompresora2 Sprzęgło kompresora2",
+            title: "Sprzęgło kompresora2 ",
             quantity: 5,
             priceNet: 42,
             priceGross: 212,
@@ -36,101 +40,13 @@ const ServiceDetails: FC<Props> = () => {
         },
     ];
 
-    const columns: TableColumn<ServiceCost>[] = [
-        {
-            Header: "Lp.",
-            accessor: "id",
-            styles: {
-                width: "40px",
-            },
-            Cell: (info) => <>{info.cell.row.index + 1}</>,
-        },
-        {
-            Header: "Nazwa",
-            accessor: "title",
-            styles: {
-                minWidth: "180px",
-                maxWidth: "250px",
-            },
-            maxWidth: 250,
-            Footer: () => <>Podsumowanie:</>,
-        },
-        {
-            Header: "Ilość",
-            accessor: "quantity",
-            Footer: (info) => <TableFooterRowSummary info={info} valueKey="quantity" />,
-        },
-        {
-            Header: "Cena netto",
-            accessor: "priceNet",
-            styles: {
-                minWidth: "100px",
-            },
-            Cell: (info) => <>{info.value} PLN</>,
-            Footer: (info) => (
-                <TableFooterRowSummary
-                    info={info}
-                    valueKey="priceNet"
-                    currency={Currency.PLN}
-                />
-            ),
-        },
-        {
-            Header: "Cena brutto",
-            accessor: "priceGross",
-            styles: {
-                minWidth: "100px",
-            },
-            Cell: (info) => <>{info.value} PLN</>,
-            Footer: (info) => (
-                <TableFooterRowSummary
-                    info={info}
-                    valueKey="priceGross"
-                    currency={Currency.PLN}
-                />
-            ),
-        },
-        {
-            Header: "Razem",
-            styles: {
-                minWidth: "100px",
-            },
-            Cell: (info: any) => {
-                const total = info.row.values.quantity * info.row.values.priceGross;
-                return (
-                    <>
-                        {total} {Currency.PLN}
-                    </>
-                );
-            },
-            Footer: (info) => {
-                const total = info.rows.reduce(
-                    (sum, row) => row.values.priceGross * row.values.quantity + sum,
-                    0
-                );
-
-                return (
-                    <>
-                        {total} {Currency.PLN}
-                    </>
-                );
-            },
-        },
-    ];
-
     return (
         <Wrapper>
             <ContentTile title="Dane samochodu">
                 <CarDetailsList />
             </ContentTile>
-            <ContentTile title="Nowa kafelka">
-                <div>Hello world</div>
-            </ContentTile>
-            <br />
-            <br />
-            <br />
-            <ContentTile title="Kosztorys">
-                <Table columns={columns} data={data} />
+            <ContentTile title={t("costs")}>
+                <Table columns={serviceDetailsColumns} data={mockData} />
             </ContentTile>
         </Wrapper>
     );
