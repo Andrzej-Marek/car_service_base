@@ -9,6 +9,7 @@ import {
     Grid11,
     BasicTileText,
     PhotosList,
+    OtherInformationsList,
 } from "@/components";
 import styled from "styled-components";
 import { Currency } from "@/shared/enums";
@@ -78,13 +79,13 @@ const ServiceDetails: FC<Props> = () => {
                 </ContentTile>
             </GridFull>
             <GridFull>
-                <ContentTile title={t("otherInformationTile.title")}>
-                    <div>Hello</div>
+                <ContentTile title={t("photosTile.title")}>
+                    <PhotosList />
                 </ContentTile>
             </GridFull>
             <GridFull>
-                <ContentTile title={t("photosTile.title")}>
-                    <PhotosList />
+                <ContentTile title={t("otherInformationTile.title")}>
+                    <OtherInformationsList />
                 </ContentTile>
             </GridFull>
             <GridFull>

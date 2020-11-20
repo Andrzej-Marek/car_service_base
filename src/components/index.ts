@@ -16,6 +16,8 @@ export { default as BasicServiceListInfo } from "./Lists/BasicServiceListInfo/Ba
 
 export { default as PhotosList } from "./Lists/PhotosList/PhotosList";
 
+export { default as OtherInformationsList } from "./Lists/OtherInformationsList/OtherInformationsList";
+
 // Table
 export { default as Table } from "./Table/Table";
 
