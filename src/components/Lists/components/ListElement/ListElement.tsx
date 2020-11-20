@@ -9,7 +9,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const ListElement: FC<Props> = ({label, value }) => {
+const ListElement: FC<Props> = ({ label, value }) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
@@ -33,6 +33,8 @@ const ListElementWrapper = styled.div`
 const ListKey = styled.div`
     color: ${({ theme }) => theme.color.primaryBlue};
     width: 110px;
+    min-width: 110px;
+    align-self: flex-start;
 `;
 
 const ListValue = styled.div`

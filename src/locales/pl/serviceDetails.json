@@ -1,4 +1,6 @@
 {
+    "title": "Serwis",
+    "lastServiceTitle": "Ostatni serwis",
     "date": "Data",
     "serviceNumber": "Nr.Serwisu",
     "service": "Serwis"

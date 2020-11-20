@@ -20,8 +20,8 @@ const App: FC<Props> = () => {
 };
 
 const MainWrapper = styled.div`
-    height: 100vh;
     background: ${({ theme }) => theme.color.background};
+    background-size: cover;
 `;
 
 export default App;

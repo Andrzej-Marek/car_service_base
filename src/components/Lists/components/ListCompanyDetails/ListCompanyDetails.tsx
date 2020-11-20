@@ -11,7 +11,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-const ListCompanyDetails: FC<Props> = ({ label, company, street, address}) => {
+const ListCompanyDetails: FC<Props> = ({ label, company, street, address }) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
@@ -40,10 +40,12 @@ const ListKey = styled.div`
     color: ${({ theme }) => theme.color.primaryBlue};
     align-self: flex-start;
     width: 110px;
+    min-width: 110px;
 `;
 
 const ListValue = styled.div`
     color: ${({ theme }) => theme.color.primaryBlue};
+    line-height: 22px;
     font-weight: 700;
 `;
 
