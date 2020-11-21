@@ -46,6 +46,15 @@
       "unique": true,
       "minLength": 12,
       "maxLength": 12
+    },
+    "user": {
+      "via": "company",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "services": {
+      "via": "company",
+      "collection": "service"
     }
   }
 }

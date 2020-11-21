@@ -8,10 +8,12 @@
   "options": {},
   "attributes": {
     "make": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "model": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "production_year": {
       "type": "string"
@@ -33,6 +35,10 @@
     "date_of_registration": {
       "type": "string",
       "regex": "^\\d{1,2}\\/\\d{1,2}\\/\\d{4}$"
+    },
+    "registration_number": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -1,7 +1,6 @@
 {
   "kind": "collectionType",
   "collectionName": "services",
-  "idAttributeType": "uuid",
   "info": {
     "name": "service",
     "description": ""
@@ -15,13 +14,16 @@
     "vehicle_details": {
       "type": "component",
       "repeatable": false,
-      "component": "vehicle.vehicle-details"
+      "component": "vehicle.vehicle-details",
+      "required": true
     },
     "service_description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "service_diagnosis": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "photos": {
       "collection": "file",
@@ -44,6 +46,14 @@
       "type": "component",
       "repeatable": false,
       "component": "costs.costs"
+    },
+    "company": {
+      "model": "company",
+      "via": "services"
+    },
+    "service_id": {
+      "type": "string",
+      "unique": true
     }
   }
 }
