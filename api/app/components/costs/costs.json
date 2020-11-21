@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_costs_costs",
+  "info": {
+    "name": "Costs",
+    "icon": "money-bill-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "PLN",
+        "EUR",
+        "USD"
+      ],
+      "required": true,
+      "default": "PLN"
+    },
+    "costs_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "costs.costs-lists"
+    }
+  }
+}

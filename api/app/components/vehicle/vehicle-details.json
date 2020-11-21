@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_vehicle_vehicle_details",
+  "info": {
+    "name": "Vehicle Details",
+    "icon": "shuttle-van",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "production_year": {
+      "type": "string"
+    },
+    "engine_capacity": {
+      "type": "string"
+    },
+    "engine_power": {
+      "type": "string"
+    },
+    "vin_number": {
+      "type": "string"
+    },
+    "mileage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vehicle.vehicle-mileage"
+    },
+    "date_of_registration": {
+      "type": "string",
+      "regex": "^\\d{1,2}\\/\\d{1,2}\\/\\d{4}$"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "idAttributeType": "uuid",
+  "info": {
+    "name": "service",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "vehicle_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vehicle.vehicle-details"
+    },
+    "service_description": {
+      "type": "richtext"
+    },
+    "service_diagnosis": {
+      "type": "richtext"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "comments": {
+      "type": "richtext"
+    },
+    "other_informations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "other-informations.other-informations"
+    },
+    "service_costs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "costs.costs"
+    }
+  }
+}
