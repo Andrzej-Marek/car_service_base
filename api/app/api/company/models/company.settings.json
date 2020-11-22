@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Companies",
+  "info": {
+    "name": "Company",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company_name": {
+      "type": "string",
+      "private": false,
+      "required": true
+    },
+    "company_id": {
+      "type": "uid"
+    },
+    "street": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "street_number": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "company_logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "vat_number": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 12,
+      "maxLength": 12
+    },
+    "user": {
+      "via": "company",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "services": {
+      "via": "company",
+      "collection": "service"
+    }
+  }
+}

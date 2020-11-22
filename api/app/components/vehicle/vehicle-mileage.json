@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_vehicle_vehicle_mileages",
+  "info": {
+    "name": "Vehicle Mileage",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "mileage": {
+      "type": "integer"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "km",
+        "mi"
+      ]
+    }
+  }
+}

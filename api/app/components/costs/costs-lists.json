@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_costs_costs_lists",
+  "info": {
+    "name": "Costs List",
+    "icon": "tags",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

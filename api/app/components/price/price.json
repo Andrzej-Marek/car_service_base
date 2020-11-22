@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_price_prices",
+  "info": {
+    "name": "Price",
+    "icon": "money-check-alt"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "integer"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "PLN",
+        "EUR",
+        "USD"
+      ]
+    }
+  }
+}
