@@ -2,12 +2,16 @@ import React, { FC, useState } from "react";
 import styled from "styled-components";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
+import { Picture } from "@/shared/types";
+import { ENV } from "@/shared/constants";
 
-interface OwnProps {}
+interface OwnProps {
+    photos: Picture[];
+}
 
 type Props = OwnProps;
 
-const PhotosList: FC<Props> = () => {
+const PhotosList: FC<Props> = ({ photos }) => {
     const [photoLightbox, setPhotoLightBox] = useState({
         isOpen: false,
         photoIndex: 0,
@@ -29,11 +33,7 @@ const PhotosList: FC<Props> = () => {
         }));
     };
 
-    const images = [
-        "https://static.posters.cz/image/750/plakaty/auta-3-cars-3-mcqueen-race-i47515.jpg",
-        "https://profiauto.pl/files/cache/b89ec3401a7a9c7ff8574bb28bd44121.jpg",
-        "https://www.carscare.pl/wp-content/uploads/2020/11/green-car2.png",
-    ];
+    const images = photos.map((photo) => `${ENV.BACKEND_URL}${photo.url}`);
     const { isOpen, photoIndex } = photoLightbox;
     return (
         <>

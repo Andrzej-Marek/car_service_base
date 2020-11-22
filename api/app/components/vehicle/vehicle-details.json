@@ -15,15 +15,6 @@
       "type": "string",
       "required": true
     },
-    "production_year": {
-      "type": "string"
-    },
-    "engine_capacity": {
-      "type": "string"
-    },
-    "engine_power": {
-      "type": "string"
-    },
     "vin_number": {
       "type": "string"
     },
@@ -39,6 +30,15 @@
     "registration_number": {
       "type": "string",
       "required": true
+    },
+    "engine_power": {
+      "type": "integer"
+    },
+    "engine_capacity": {
+      "type": "integer"
+    },
+    "production_year": {
+      "type": "integer"
     }
   }
 }

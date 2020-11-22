@@ -1,19 +1,22 @@
-import { media } from "@/shared/utils";
+import { media, toUpperCase } from "@/shared/utils";
 import React, { FC } from "react";
 import styled from "styled-components";
 
 interface OwnProps {
     label: string;
-    value: string;
+    value: any;
+    valueUnit?: string;
 }
 
 type Props = OwnProps;
 
-const ListElement: FC<Props> = ({ label, value }) => {
+const ListElement: FC<Props> = ({ label, value, valueUnit }) => {
     return (
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
-            <ListValue>{value ?? "-"}</ListValue>
+            <ListValue>
+                {value ?? "-"} {valueUnit && valueUnit}
+            </ListValue>
         </ListElementWrapper>
     );
 };

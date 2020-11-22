@@ -1,32 +1,52 @@
-import { media } from "@/shared/utils";
+import { media, toUpperCase } from "@/shared/utils";
 import React, { FC } from "react";
 import styled from "styled-components";
 import { ListElement } from "../components";
 import { useTranslation } from "react-i18next";
-
-interface OwnProps {}
+import { VehicleDetails } from "@/shared/types";
+interface OwnProps {
+    vehicleDetails: VehicleDetails;
+}
 
 type Props = OwnProps;
 
-const VehicleDetailsList: FC<Props> = () => {
+const VehicleDetailsList: FC<Props> = ({ vehicleDetails }) => {
     const { t } = useTranslation("vehicleSpecification");
 
     return (
         <ListWrapper>
             <Column>
-                <ListElement label={t("mark")} value="Mercedes Benz" />
-                <ListElement label={t("model")} value="Mercedes Benz" />
+                <ListElement label={t("make")} value={vehicleDetails.make} />
+                <ListElement label={t("model")} value={vehicleDetails.model} />
                 <ListElement
                     label={t("yearProduction")}
-                    value="Mercedes Benzadsasdasda dasd asd asd asd ad "
+                    value={vehicleDetails.production_year}
                 />
-                <ListElement label={t("mileage")} value="Mercedes Benz" />
+                <ListElement
+                    label={t("mileage")}
+                    value={vehicleDetails.mileage?.mileage}
+                    valueUnit={vehicleDetails.mileage?.unit}
+                />
             </Column>
             <Column>
-                <ListElement label={t("capacity")} value="Mercedes Benz" />
-                <ListElement label={t("enginePower")} value="Mercedes Benz" />
-                <ListElement label={t("numberVin")} value="Mercedes Benz" />
-                <ListElement label={t("registration")} value="Mercedes Benz" />
+                <ListElement
+                    label={t("capacity")}
+                    value={vehicleDetails.engine_capacity}
+                    valueUnit={vehicleDetails.engine_capacity ? "cm3" : undefined}
+                />
+                <ListElement
+                    label={t("enginePower")}
+                    value={vehicleDetails.engine_power}
+                    valueUnit={vehicleDetails.engine_power ? "KM" : undefined}
+                />
+                <ListElement
+                    label={t("numberVin")}
+                    value={toUpperCase(vehicleDetails.vin_number)}
+                />
+                <ListElement
+                    label={t("registration")}
+                    value={toUpperCase(vehicleDetails.registration_number)}
+                />
             </Column>
         </ListWrapper>
     );
