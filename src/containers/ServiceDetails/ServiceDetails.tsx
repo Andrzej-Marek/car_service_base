@@ -12,11 +12,12 @@ import {
     OtherInformationsList,
 } from "@/components";
 import styled from "styled-components";
-import { Service, ServiceCost, ServiceCostElement } from "@/shared/types";
+import { Service, ServiceCost, ServiceCostElement, ServiceCostTable } from "@/shared/types";
 import { useTranslation } from "react-i18next";
 import { serviceDetailsColumns } from "./serviceDetails.columns";
 import { useQuery } from "react-query";
 import { getApiDetails } from "@/shared/api";
+import { mapServiceCostToTableServiceCost } from "@/shared/mappers";
 
 interface OwnProps {}
 
@@ -33,34 +34,6 @@ const ServiceDetails: FC<Props> = () => {
         }
     );
 
-    // TODO: Mapper for this structure and pass curreny to columns
-    // const mockData: ServiceCost[] = [
-    //     {
-    //         id: 1,
-    //         title: "Sprzęgło kompresora",
-    //         quantity: 1,
-    //         priceNet: 22,
-    //         priceGross: 3332,
-    //         currency: Currency.PLN,
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "Sprzęgło kompresora2 ",
-    //         quantity: 5,
-    //         priceNet: 42,
-    //         priceGross: 212,
-    //         currency: Currency.PLN,
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "Sprzęgło",
-    //         quantity: 2,
-    //         priceNet: 142,
-    //         priceGross: 4212,
-    //         currency: Currency.PLN,
-    //     },
-    // ];
-    const mockData: ServiceCost[] = [];
     if (isLoading) {
         // TODO: Make a loading spinner
         return <div>Loading...</div>;
@@ -86,7 +59,9 @@ const ServiceDetails: FC<Props> = () => {
         other_informations,
         service_costs,
     } = data;
-    console.log("service_costs", service_costs);
+
+    const serviceCostsTable = mapServiceCostToTableServiceCost(service_costs);
+
     return (
         <Wrapper>
             <Grid43>
@@ -107,7 +82,10 @@ const ServiceDetails: FC<Props> = () => {
             </Grid11>
             <GridFull>
                 <ContentTile title={t("costTile.title")}>
-                    <Table data={service_costs.costs_list} columns={serviceDetailsColumns} />
+                    <Table<ServiceCostTable>
+                        data={serviceCostsTable}
+                        columns={serviceDetailsColumns}
+                    />
                 </ContentTile>
             </GridFull>
             {photos.length && (

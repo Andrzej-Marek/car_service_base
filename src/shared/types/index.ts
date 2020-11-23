@@ -17,3 +17,5 @@ export { Service } from "./service.type";
 export { ServiceCostElement } from "./serviceCostElement.type";
 
 export { OtherServiceInformations } from "./otherServiceInformations.type";
+
+export { ServiceCostTable } from "./serviceCostTable.type";

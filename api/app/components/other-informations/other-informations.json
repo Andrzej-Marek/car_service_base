@@ -17,7 +17,8 @@
         "CREADIT_CARD",
         "BANK_TRANSFER",
         "OTHER"
-      ]
+      ],
+      "required": true
     }
   }
 }
