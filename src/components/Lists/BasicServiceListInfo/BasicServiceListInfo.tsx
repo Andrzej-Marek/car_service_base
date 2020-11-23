@@ -14,20 +14,22 @@ type Props = OwnProps;
 const BasicServiceListInfo: FC<Props> = ({ company, serviceDate }) => {
     const { t } = useTranslation("serviceDetails");
 
-    const companyStreetAdress = `ul. ${company.street} ${company.street_number}`;
-    const companyCityAdress = `${company.postal_code} ${company.city}`;
+    const companyStreetAdress = company && `ul. ${company.street} ${company.street_number}`;
+    const companyCityAdress = company && `${company.postal_code} ${company.city}`;
     return (
         <>
             <ListElement
                 label={t("date")}
                 value={TimeMachine.formatToCalendarDate(serviceDate)}
             />
-            <ListCompanyDetails
-                label={t("service")}
-                company={company.company_name}
-                street={companyStreetAdress}
-                address={companyCityAdress}
-            />
+            {company && (
+                <ListCompanyDetails
+                    label={t("service")}
+                    company={company.company_name}
+                    street={companyStreetAdress}
+                    address={companyCityAdress}
+                />
+            )}
         </>
     );
 };

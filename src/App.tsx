@@ -3,6 +3,7 @@ import { GlobalStyle } from "./shared/styles";
 import { Container } from "./components";
 import styled from "styled-components";
 import ServiceDetails from "./containers/ServiceDetails/ServiceDetails";
+import { Switch, Route } from "react-router-dom";
 
 interface OwnProps {}
 
@@ -13,7 +14,11 @@ const App: FC<Props> = () => {
         <MainWrapper>
             <GlobalStyle />
             <Container>
-                <ServiceDetails />
+                <Switch>
+                    <Route path="/:serviceId" exact>
+                        <ServiceDetails />
+                    </Route>
+                </Switch>
             </Container>
         </MainWrapper>
     );
