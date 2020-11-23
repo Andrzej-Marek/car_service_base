@@ -1,7 +1,7 @@
 {
     "type": "Rodzaj",
     "title": "Dane pojazdu",
-    "mark": "Marka",
+    "make": "Marka",
     "model": "Model",
     "yearProduction": "Rok produkcji",
     "mileage": "Przebieg",

@@ -20,7 +20,16 @@
     "costs_list": {
       "type": "component",
       "repeatable": true,
-      "component": "costs.costs-lists"
+      "component": "costs.costs-lists",
+      "required": false
+    },
+    "price_variant": {
+      "type": "enumeration",
+      "enum": [
+        "NET",
+        "GROSS"
+      ],
+      "default": "GROSS"
     }
   }
 }

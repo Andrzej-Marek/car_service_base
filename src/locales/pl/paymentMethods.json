@@ -1,0 +1,6 @@
+{
+    "CASH": "Gotówka",
+    "CREADIT_CARD": "Karta płatnicza",
+    "BANK_TRANSFER": "Przelew bankowy",
+    "OTHER": "Inne"
+}

@@ -1,17 +1,35 @@
+import { OtherServiceInformations } from "@/shared/types";
+import { TimeMachine } from "@/shared/utils";
 import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { ListElement } from "../components";
 
-interface OwnProps {}
+interface OwnProps {
+    otherInformations: OtherServiceInformations;
+}
 
 type Props = OwnProps;
 
-const OtherInformationsList: FC<Props> = () => {
+const OtherInformationsList: FC<Props> = ({ otherInformations }) => {
+    const { t } = useTranslation(["otherServiceInformations", "paymentMethods"]);
     return (
         <Wrapper>
             <ListWrapper>
-                <ListElement value="Gotówka" label="Płatność" />
-                <ListElement value="02.10.2021" label="Czas gwarancji" />
+                {otherInformations.payment_method && (
+                    <ListElement
+                        value={t(`paymentMethods:${otherInformations.payment_method}`)}
+                        label={t("paymentMethod")}
+                    />
+                )}
+                {otherInformations.warranty_time && (
+                    <ListElement
+                        value={TimeMachine.formatToCalendarDate(
+                            otherInformations.warranty_time
+                        )}
+                        label={t("warrantyTime")}
+                    />
+                )}
             </ListWrapper>
         </Wrapper>
     );

@@ -1,23 +1,32 @@
 import React, { FC } from "react";
 import { ListElement, ListCompanyDetails } from "../components";
 import { useTranslation } from "react-i18next";
+import { Company } from "@/shared/types";
+import { TimeMachine } from "@/shared/utils";
 
-interface OwnProps {}
+interface OwnProps {
+    company: Company;
+    serviceDate: Date;
+}
 
 type Props = OwnProps;
 
-const BasicServiceListInfo: FC<Props> = () => {
+const BasicServiceListInfo: FC<Props> = ({ company, serviceDate }) => {
     const { t } = useTranslation("serviceDetails");
 
+    const companyStreetAdress = `ul. ${company.street} ${company.street_number}`;
+    const companyCityAdress = `${company.postal_code} ${company.city}`;
     return (
         <>
-            <ListElement label={t("date")} value="22.02.2020" />
-            <ListElement label={t("serviceNumber")} value="01/02/2020" />
+            <ListElement
+                label={t("date")}
+                value={TimeMachine.formatToCalendarDate(serviceDate)}
+            />
             <ListCompanyDetails
                 label={t("service")}
-                company="EXELO s.c"
-                street="ul Pszczyńska 116"
-                address="43-254 Warszowice"
+                company={company.company_name}
+                street={companyStreetAdress}
+                address={companyCityAdress}
             />
         </>
     );

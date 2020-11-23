@@ -4,6 +4,8 @@ import serviceDetails from "./serviceDetails.json";
 import contentTile from "./contentTile.json";
 import serviceCosts from "./serviceCosts.json";
 import vehicleSpecification from "./vehicleSpecification.json";
+import otherServiceInformations from "./otherServiceInformations.json";
+import paymentMethods from "./paymentMethods.json";
 
 export default {
     tile,
@@ -12,4 +14,6 @@ export default {
     contentTile,
     vehicleSpecification,
     serviceCosts,
+    otherServiceInformations,
+    paymentMethods,
 };

@@ -1,10 +1,8 @@
-import { Currency } from "../enums";
-
+import { Currency, PriceVariant } from "../enums";
+import { ServiceCostElement } from "./serviceCostElement.type";
 export interface ServiceCost {
     id: number;
-    title: string;
-    quantity: number;
-    priceNet: number;
-    priceGross: number;
     currency: Currency;
+    price_variant: PriceVariant;
+    costs_list: ServiceCostElement[];
 }

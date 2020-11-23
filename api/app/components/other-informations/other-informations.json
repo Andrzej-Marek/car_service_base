@@ -2,15 +2,23 @@
   "collectionName": "components_other_informations_other_informations",
   "info": {
     "name": "Other Informations",
-    "icon": "sticky-note"
+    "icon": "sticky-note",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "payment_method": {
-      "type": "string"
-    },
     "warranty_time": {
       "type": "string"
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "CASH",
+        "CREADIT_CARD",
+        "BANK_TRANSFER",
+        "OTHER"
+      ],
+      "required": true
     }
   }
 }
