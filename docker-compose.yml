@@ -1,5 +1,11 @@
 version: "3"
 services:
+  ui:
+    build: ./front
+    ports:
+      - "80:80"
+    depends_on:
+      - strapi
   strapi:
     image: strapi/strapi
     environment:
@@ -10,7 +16,7 @@ services:
       DATABASE_USERNAME: strapi
       DATABASE_PASSWORD: strapi
     volumes:
-      - ./app:/srv/app
+      - ./api/app:/srv/app
     ports:
       - "1337:1337"
     depends_on:
@@ -22,4 +28,4 @@ services:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./api/data:/var/lib/postgresql/data
