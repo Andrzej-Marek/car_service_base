@@ -39,6 +39,7 @@ const Wrapper = styled.div``;
 
 const ListWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `;
 
 export default OtherInformationsList;

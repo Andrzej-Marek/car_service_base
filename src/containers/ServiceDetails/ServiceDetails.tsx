@@ -12,12 +12,13 @@ import {
     OtherInformationsList,
 } from "@/components";
 import styled from "styled-components";
-import { Service, ServiceCost, ServiceCostElement, ServiceCostTable } from "@/shared/types";
+import { Service, ServiceCostTable } from "@/shared/types";
 import { useTranslation } from "react-i18next";
 import { serviceDetailsColumns } from "./serviceDetails.columns";
 import { useQuery } from "react-query";
 import { getApiDetails } from "@/shared/api";
 import { mapServiceCostToTableServiceCost } from "@/shared/mappers";
+import { useParams } from "react-router-dom";
 
 interface OwnProps {}
 
@@ -25,10 +26,11 @@ type Props = OwnProps;
 
 const ServiceDetails: FC<Props> = () => {
     const { t } = useTranslation("tile");
+    const { serviceId } = useParams<{ serviceId: string }>();
 
     const { isLoading, error, data } = useQuery<Service>(
         "serviceDetails",
-        () => getApiDetails("2aaba566"),
+        () => getApiDetails(serviceId),
         {
             retry: false,
         }
@@ -80,15 +82,17 @@ const ServiceDetails: FC<Props> = () => {
                     <BasicTileText text={service_description} />
                 </ContentTile>
             </Grid11>
-            <GridFull>
-                <ContentTile title={t("costTile.title")}>
-                    <Table<ServiceCostTable>
-                        data={serviceCostsTable}
-                        columns={serviceDetailsColumns}
-                    />
-                </ContentTile>
-            </GridFull>
-            {photos.length && (
+            {serviceCostsTable.length > 0 && (
+                <GridFull>
+                    <ContentTile title={t("costTile.title")}>
+                        <Table<ServiceCostTable>
+                            data={serviceCostsTable}
+                            columns={serviceDetailsColumns}
+                        />
+                    </ContentTile>
+                </GridFull>
+            )}
+            {photos.length > 0 && (
                 <GridFull>
                     <ContentTile title={t("photosTile.title")}>
                         <PhotosList photos={photos} />

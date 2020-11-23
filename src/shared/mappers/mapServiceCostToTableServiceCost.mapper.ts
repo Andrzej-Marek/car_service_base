@@ -4,6 +4,9 @@ import { ServiceCost, ServiceCostTable } from "../types";
 export const mapServiceCostToTableServiceCost = (
     serviceCosts: ServiceCost
 ): ServiceCostTable[] => {
+    if (!serviceCosts || !serviceCosts.costs_list) {
+        return [];
+    }
     return serviceCosts.costs_list.map((serviceCost) => {
         const priceNet =
             serviceCosts.price_variant === PriceVariant.Net
