@@ -10,6 +10,8 @@ import {
     BasicTileText,
     PhotosList,
     OtherInformationsList,
+    LoadingPage,
+    ServiceNotFound,
 } from "@/components";
 import styled from "styled-components";
 import { Service, ServiceCostTable } from "@/shared/types";
@@ -37,13 +39,10 @@ const ServiceDetails: FC<Props> = () => {
     );
 
     if (isLoading) {
-        // TODO: Make a loading spinner
-        return <div>Loading...</div>;
+        return <LoadingPage />;
     }
     if (error) {
-        // TODO: Make a not found information
-
-        return <div>Nie znaleziono</div>;
+        return <ServiceNotFound />;
     }
 
     if (!data) {
