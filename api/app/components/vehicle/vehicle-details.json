@@ -16,7 +16,9 @@
       "required": true
     },
     "vin_number": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": false
     },
     "mileage": {
       "type": "component",
