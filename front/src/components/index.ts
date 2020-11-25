@@ -34,3 +34,9 @@ export { default as GridFull } from "./Grid/GridFull/GridFull";
 
 // Text
 export { default as BasicTileText } from "./Text/BasicTileText/BasicTileText";
+
+// Loading
+export { default as LoadingPage } from "./Loading/LoadingPage/LoadingPage";
+
+// OTHER
+export { default as ServiceNotFound } from "./ServiceNotFound/ServiceNotFound";

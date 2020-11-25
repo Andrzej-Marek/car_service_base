@@ -6,6 +6,8 @@ import serviceCosts from "./serviceCosts.json";
 import vehicleSpecification from "./vehicleSpecification.json";
 import otherServiceInformations from "./otherServiceInformations.json";
 import paymentMethods from "./paymentMethods.json";
+import loading from "./loading.json";
+import notFound from "./notFound.json";
 
 export default {
     tile,
@@ -16,4 +18,6 @@ export default {
     serviceCosts,
     otherServiceInformations,
     paymentMethods,
+    loading,
+    notFound,
 };
