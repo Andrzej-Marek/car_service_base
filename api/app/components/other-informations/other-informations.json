@@ -15,6 +15,7 @@
       "enum": [
         "CASH",
         "CREADIT_CARD",
+        "PAYMENT_CARD",
         "BANK_TRANSFER",
         "OTHER"
       ],
