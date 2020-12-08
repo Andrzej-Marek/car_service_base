@@ -4,6 +4,11 @@
             "method": "POST",
             "path": "/logout",
             "handler": "Custom.logout"
+        },
+        {
+            "method": "GET",
+            "path": "/users/me",
+            "handler": "Custom.me"
         }
     ]
 }
