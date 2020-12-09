@@ -7,6 +7,7 @@ module.exports = {
         "https://mysite.com",
         "https://www.mysite.com",
         "http://193.178.43.128",
+        "http://193.178.43.128:1337",
       ],
     },
   },
