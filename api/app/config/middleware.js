@@ -6,6 +6,7 @@ module.exports = {
         "http://localhost:1337",
         "https://mysite.com",
         "https://www.mysite.com",
+        "http://193.178.43.128",
       ],
     },
   },
