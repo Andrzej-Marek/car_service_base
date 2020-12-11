@@ -8,6 +8,8 @@ services:
     environment:
       VIRTUAL_HOST: raportserwisowy.pl
       VIRTUAL_PORT: 5000
+      LETSENCRYPT_HOST: raportserwisowy.pl
+      LETSENCRYPT_EMAIL: andrzejmarek116@gmail.com
   strapi:
     image: strapi/strapi
     environment:
