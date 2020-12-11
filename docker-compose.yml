@@ -5,7 +5,6 @@ services:
     expose:
       - 80
     restart: always
-    container_name: frontend_car_base
     environment:
       VIRTUAL_HOST: raportserwisowy.pl
   strapi:
