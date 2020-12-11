@@ -31,6 +31,10 @@ services:
       POSTGRES_DB: strapi
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
+      VIRTUAL_HOST: raportserwisowy.pl
+      VIRTUAL_PORT: 1337
+      LETSENCRYPT_HOST: raportserwisowy.pl
+      LETSENCRYPT_EMAIL: andrzejmarek116@gmail.com
     volumes:
       - ./api/data:/var/lib/postgresql/data
 networks:
