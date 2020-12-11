@@ -1,11 +1,15 @@
 version: "3"
 services:
-  ui:
+  frontend:
     build: ./front
-    ports:
-      - "80:80"
+    expose:
+      - 80
     depends_on:
       - strapi
+    restart: always
+    container_name: frontend_car_base
+    environment:
+      VIRTUAL_HOST: raportserwisowy.pl
   strapi:
     image: strapi/strapi
     environment:
@@ -29,3 +33,8 @@ services:
       POSTGRES_PASSWORD: strapi
     volumes:
       - ./api/data:/var/lib/postgresql/data
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
