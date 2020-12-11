@@ -7,7 +7,7 @@ module.exports = merge(common(), {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                BACKEND_URL: JSON.stringify("https://raportserwisowy.pl:1337"),
+                BACKEND_URL: JSON.stringify("https://api.raportserwisowy.pl:1337"),
             },
         }),
     ],
