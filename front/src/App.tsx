@@ -18,6 +18,9 @@ const App: FC<Props> = () => {
                     <Route path="/:serviceId" exact>
                         <ServiceDetails />
                     </Route>
+                    <Route>
+                        <div>Not found page</div>
+                    </Route>
                 </Switch>
             </Container>
         </MainWrapper>
