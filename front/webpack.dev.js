@@ -7,7 +7,7 @@ module.exports = merge(common(), {
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                BACKEND_URL: JSON.stringify("/services/m"),
+                BACKEND_URL: JSON.stringify("http://localhost:1337"),
             },
         }),
     ],
