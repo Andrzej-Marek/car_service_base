@@ -4,8 +4,6 @@ services:
     build: ./front
     expose:
       - 80
-    depends_on:
-      - strapi
     restart: always
     container_name: frontend_car_base
     environment:
@@ -33,7 +31,6 @@ services:
       POSTGRES_PASSWORD: strapi
     volumes:
       - ./api/data:/var/lib/postgresql/data
-
 networks:
   default:
     external:
