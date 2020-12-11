@@ -13,6 +13,7 @@ RUN npm install react-scripts@3.0.1 -g
 # We want the production version
 RUN npm run build:dev
 
+CMD ["npm", "start"]
 # # Prepare nginx
 # FROM nginx:1.16.0-alpine
 # COPY --from=build /app/dist /usr/share/nginx/html
