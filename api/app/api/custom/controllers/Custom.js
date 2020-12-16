@@ -25,8 +25,6 @@ module.exports = {
       "users-permissions"
     ].services.jwt.getToken(ctx);
 
-    console.log("user", user);
-
     if (!user) {
       return ctx.badRequest(null, [
         { messages: [{ id: "No authorization header was found" }] },
@@ -39,6 +37,21 @@ module.exports = {
         id: user.id,
       });
 
-    ctx.send({ user: userPayload });
+    const userResponseDto = {
+      id: userPayload.id,
+      role: {
+        type: userPayload.role.type,
+      },
+      provider: userPayload.provider,
+      username: userPayload.username,
+      email: userPayload.email,
+      confirmed: userPayload.confirmed,
+      blocked: userPayload.blocked,
+      company: userPayload.company,
+      created_at: userPayload.created_at,
+      updated_at: userPayload.updated_at,
+    };
+
+    ctx.send({ user: userResponseDto });
   },
 };

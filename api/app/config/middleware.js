@@ -15,6 +15,7 @@ module.exports = {
         "https://raportserwisowy.pl:1337",
         "https://api.raportserwisowy.pl",
         "https://api.raportserwisowy.pl:1337",
+        "https://serwis.raportserwisowy.pl",
       ],
     },
   },

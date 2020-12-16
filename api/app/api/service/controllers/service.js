@@ -8,8 +8,25 @@
 const { sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
-    async findOne(ctx) {
-        const entity = await strapi.services.service.findOne({ service_id: ctx.params.id });
-        return sanitizeEntity(entity, { model: strapi.models.service });
-    },
+  async findOne(ctx) {
+    const entity = await strapi.services.service.findOne({
+      service_id: ctx.params.id,
+    });
+    return sanitizeEntity(entity, { model: strapi.models.service });
+  },
+
+  async create(ctx) {
+    let entity;
+    if (ctx.is("multipart")) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.service.create(data, { files });
+    } else {
+      console.log("ctx.request.body", ctx.request.body);
+      entity = await strapi.services.service.create({
+        ...ctx.request.body,
+        company: ctx.state.user.company,
+      });
+    }
+    return sanitizeEntity(entity, { model: strapi.models.service });
+  },
 };
