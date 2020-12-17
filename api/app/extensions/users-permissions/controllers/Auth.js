@@ -11,7 +11,6 @@ const crypto = require("crypto");
 const _ = require("lodash");
 const grant = require("grant-koa");
 const { sanitizeEntity } = require("strapi-utils");
-const { environmentDomain } = require("../../../config/environmentDomain");
 
 const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const formatError = (error) => [
@@ -134,7 +133,6 @@ module.exports = {
         const token = strapi.plugins["users-permissions"].services.jwt.issue({
           id: user.id,
         });
-        console.log("process.env.CLIENT_URL", process.env);
 
         ctx.cookies.set("token", token, {
           httpOnly: true,
