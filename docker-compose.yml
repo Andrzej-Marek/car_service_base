@@ -12,7 +12,6 @@ services:
       LETSENCRYPT_EMAIL: andrzejmarek116@gmail.com
   strapi:
     image: strapi/strapi
-    env_file: ./api/app/.env
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: strapi
