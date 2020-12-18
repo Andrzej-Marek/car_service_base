@@ -12,8 +12,14 @@ services:
       LETSENCRYPT_EMAIL: andrzejmarek116@gmail.com
   strapi:
     image: strapi/strapi
-    env_file: ./api/app/.env
+    env_file: ./app/.env
     environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
       VIRTUAL_HOST: api.raportserwisowy.pl
       VIRTUAL_PORT: 1337
       LETSENCRYPT_HOST: api.raportserwisowy.pl
