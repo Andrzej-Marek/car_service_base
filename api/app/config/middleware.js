@@ -1,5 +1,8 @@
 module.exports = {
   settings: {
+    load: {
+      before: ["responseTime", "logger", "cors", "responses"],
+    },
     cors: {
       origin: [
         "http://localhost:8080",
