@@ -2,6 +2,7 @@ version: "3"
 services:
   strapi:
     image: strapi/strapi
+    env_file: .env
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: strapi
