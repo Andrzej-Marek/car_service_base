@@ -11,7 +11,10 @@ interface OwnProps<T> {
 type Props<T> = OwnProps<T>;
 
 const Table = <T extends {}>({ data, columns }: PropsWithChildren<Props<T>>) => {
-    const { headerGroups, rows, prepareRow, footerGroups } = useTable<T>({ columns, data });
+    const { headerGroups, rows, prepareRow, footerGroups } = useTable<T>({
+        columns,
+        data,
+    });
 
     return (
         <TableWrapper>
@@ -68,7 +71,6 @@ const TableWrapper = styled.div`
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-
     table {
         border-spacing: 0;
         width: 100%;
@@ -91,7 +93,6 @@ const TableWrapper = styled.div`
 
 const StyledTh = styled.th`
     text-align: left;
-
     padding: 10px 0.5rem;
 `;
 

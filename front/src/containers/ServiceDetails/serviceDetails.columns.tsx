@@ -62,12 +62,24 @@ export const serviceDetailsColumns: TableColumn<ServiceCostTable>[] = [
         ),
     },
     {
+        Header: globalTranslation(`${TRANSLATION_PATH}.taxRate`),
+        accessor: "taxRate",
+        styles: {
+            minWidth: "100px",
+        },
+        Cell: (info) => <>{get(info, "value", "-")}</>,
+    },
+    {
         Header: globalTranslation(`${TRANSLATION_PATH}.grossPrice`),
         accessor: "priceGross",
         styles: {
             minWidth: "100px",
         },
-        Cell: (info) => <>{info.value.toFixed(2)} PLN</>,
+        Cell: (info) => (
+            <>
+                {info.value.toFixed(2)} {getCellCurrency(info)}
+            </>
+        ),
         Footer: (info) => (
             <TableFooterRowSummary
                 info={info}
@@ -98,7 +110,7 @@ export const serviceDetailsColumns: TableColumn<ServiceCostTable>[] = [
 
             return (
                 <>
-                    {total} {getFooterCurrency(info)}
+                    {total.toFixed(2)} {getFooterCurrency(info)}
                 </>
             );
         },

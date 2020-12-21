@@ -61,8 +61,25 @@ const ServiceDetails: FC<Props> = () => {
         service_costs,
     } = data;
 
-    const serviceCostsTable = mapServiceCostToTableServiceCost(service_costs);
+    const createCostListForTableFormat = (): ServiceCostTable[] => {
+        console.log("service_costs", service_costs);
+        const costList = service_costs.costs_list.map(
+            (cost) =>
+                ({
+                    currency: service_costs.currency,
+                    priceGross: cost.price_gross,
+                    priceNet: cost.price_net,
+                    quantity: cost.quantity,
+                    title: cost.title,
+                    total: cost.price_gross * cost.quantity,
+                    taxRate: cost.tax_rate,
+                } as ServiceCostTable)
+        );
 
+        return costList;
+    };
+
+    const createdCostList = createCostListForTableFormat();
     return (
         <Wrapper>
             <Grid43>
@@ -81,11 +98,11 @@ const ServiceDetails: FC<Props> = () => {
                     <BasicTileText text={service_description} />
                 </ContentTile>
             </Grid11>
-            {serviceCostsTable.length > 0 && (
+            {createdCostList.length > 0 && (
                 <GridFull>
                     <ContentTile title={t("costTile.title")}>
                         <Table<ServiceCostTable>
-                            data={serviceCostsTable}
+                            data={createdCostList}
                             columns={serviceDetailsColumns}
                         />
                     </ContentTile>
