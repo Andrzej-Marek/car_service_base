@@ -8,7 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const tsImportPluginFactory = require("ts-import-plugin");
 const fs = require("fs");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const srcPath = (subDir) => path.join(__dirname, "src", subDir);
 
