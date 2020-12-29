@@ -6,6 +6,7 @@
         "lp": "Lp.",
         "quantity": "Ilość",
         "netPrice": "Cena netto",
+        "taxRate": "Stawka VAT",
         "grossPrice": "Cena brutto",
         "summary": "Razem"
     }
