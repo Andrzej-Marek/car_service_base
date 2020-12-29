@@ -8,6 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const tsImportPluginFactory = require("ts-import-plugin");
 const fs = require("fs");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const srcPath = (subDir) => path.join(__dirname, "src", subDir);
 
@@ -24,7 +25,6 @@ module.exports = (_, env) => {
     return {
         mode: isProdMode ? "production" : "development",
         entry: "./src/index.tsx",
-        devtool: "source-map",
         output: {
             path: path.resolve(__dirname, "dist"),
             filename: "[name].car_service.js",
@@ -109,8 +109,10 @@ module.exports = (_, env) => {
             new MiniCssExtractPlugin({
                 filename: "bundle.css",
             }),
-            // new FaviconsWebpackPlugin("./src/static/favicon.png"),
-            // new LodashModuleReplacementPlugin(),
+            //   new FaviconsWebpackPlugin("./src/static/favicon.png"),
+            // new BundleAnalyzerPlugin(),
+            new LodashModuleReplacementPlugin(),
+            new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         ],
         node: {
             fs: "empty",

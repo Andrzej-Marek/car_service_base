@@ -3,12 +3,11 @@ const merge = require("webpack-merge");
 const common = require("./webpack.common.js");
 
 module.exports = merge(common(), {
-    mode: "development",
-    devtool: "source-map",
+    mode: "production",
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {
-                BACKEND_URL: JSON.stringify("http://localhost:1337"),
+                BACKEND_URL: JSON.stringify("https://api.raportserwisowy.pl"),
             },
         }),
     ],
