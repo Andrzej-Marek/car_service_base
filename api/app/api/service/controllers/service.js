@@ -21,12 +21,21 @@ module.exports = {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services.service.create(data, { files });
     } else {
-      console.log("ctx.request.body", ctx.request.body);
       entity = await strapi.services.service.create({
         ...ctx.request.body,
         company: ctx.state.user.company,
       });
     }
     return sanitizeEntity(entity, { model: strapi.models.service });
+  },
+
+  async find(ctx) {
+    const results = await strapi
+      .query("service")
+      .find({ company: ctx.state.user.company });
+
+    return results.map((entity) =>
+      sanitizeEntity(entity, { model: strapi.models.service })
+    );
   },
 };
