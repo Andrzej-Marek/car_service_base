@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "warranty_time": {
-      "type": "string"
-    },
     "payment_method": {
       "type": "enumeration",
       "enum": [
@@ -20,6 +17,13 @@
         "OTHER"
       ],
       "required": true
+    },
+    "service_date": {
+      "type": "date",
+      "required": true
+    },
+    "warranty_time": {
+      "type": "date"
     }
   }
 }

@@ -133,10 +133,10 @@ module.exports = {
         const token = strapi.plugins["users-permissions"].services.jwt.issue({
           id: user.id,
         });
-        console.log("process.env", process.env);
+
         ctx.cookies.set("token", token, {
           httpOnly: true,
-          secure: process.env.NODE_ENV === "production" ? true : false,
+          secure: process.env.NODE_ENV === "production",
           maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
           domain: process.env.CLIENT_DOMAIN || "localhost",
         });
