@@ -1,11 +1,3 @@
-module.exports = {
-  settings: {
-    cors: {
-      origin: process.env.NODE_ENV === "production" ? PROD_ORIGIN : DEV_ORIGIN,
-    },
-  },
-};
-
 const DEV_ORIGIN = [
   "http://localhost:8080",
   "http://localhost",
@@ -29,3 +21,11 @@ const PROD_ORIGIN = [
   "https://serwis.raportserwisowy.pl",
   "https://raportserwisowy.pl",
 ];
+
+module.exports = {
+  settings: {
+    cors: {
+      origin: process.env.NODE_ENV === "production" ? PROD_ORIGIN : DEV_ORIGIN,
+    },
+  },
+};
