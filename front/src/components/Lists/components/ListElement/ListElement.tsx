@@ -15,7 +15,7 @@ const ListElement: FC<Props> = ({ label, value, valueUnit }) => {
         <ListElementWrapper>
             <ListKey>{label}:</ListKey>
             <ListValue>
-                {value ?? "-"} {valueUnit && valueUnit}
+                {value ?? "-"} {value && valueUnit && valueUnit}
             </ListValue>
         </ListElementWrapper>
     );

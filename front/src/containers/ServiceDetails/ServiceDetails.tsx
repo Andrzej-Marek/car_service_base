@@ -19,8 +19,8 @@ import { useTranslation } from "react-i18next";
 import { serviceDetailsColumns } from "./serviceDetails.columns";
 import { useQuery } from "react-query";
 import { getApiDetails } from "@/shared/api";
-import { mapServiceCostToTableServiceCost } from "@/shared/mappers";
 import { useParams } from "react-router-dom";
+import { get } from "lodash";
 
 interface OwnProps {}
 
@@ -46,7 +46,7 @@ const ServiceDetails: FC<Props> = () => {
     }
 
     if (!data) {
-        return <div>Brak informacji o servisie</div>;
+        return <div>Brak informacji o serwisie</div>;
     }
 
     const {
@@ -62,7 +62,6 @@ const ServiceDetails: FC<Props> = () => {
     } = data;
 
     const createCostListForTableFormat = (): ServiceCostTable[] => {
-        console.log("service_costs", service_costs);
         const costList = service_costs.costs_list.map(
             (cost) =>
                 ({
@@ -87,7 +86,10 @@ const ServiceDetails: FC<Props> = () => {
                     <VehicleDetailsList vehicleDetails={vehicle_details} />
                 </ContentTile>
                 <ContentTile title={t("servisTile.title")}>
-                    <BasicServiceListInfo company={company} serviceDate={created_at} />
+                    <BasicServiceListInfo
+                        company={company}
+                        serviceDate={get(other_informations, "service_date") || created_at}
+                    />
                 </ContentTile>
             </Grid43>
             <Grid11>

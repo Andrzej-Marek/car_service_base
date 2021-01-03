@@ -32,12 +32,12 @@ const VehicleDetailsList: FC<Props> = ({ vehicleDetails }) => {
                 <ListElement
                     label={t("capacity")}
                     value={vehicleDetails.engine_capacity}
-                    valueUnit={vehicleDetails.engine_capacity ? "cm3" : undefined}
+                    valueUnit="cm3"
                 />
                 <ListElement
                     label={t("enginePower")}
                     value={vehicleDetails.engine_power}
-                    valueUnit={vehicleDetails.engine_power ? "KM" : undefined}
+                    valueUnit="KM"
                 />
                 <ListElement
                     label={t("numberVin")}

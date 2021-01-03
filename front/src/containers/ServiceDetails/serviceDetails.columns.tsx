@@ -67,7 +67,7 @@ export const serviceDetailsColumns: TableColumn<ServiceCostTable>[] = [
         styles: {
             minWidth: "100px",
         },
-        Cell: (info) => <>{get(info, "value", "-")}</>,
+        Cell: (info) => <>{get(info, "value", "-")}%</>,
     },
     {
         Header: globalTranslation(`${TRANSLATION_PATH}.grossPrice`),
@@ -98,7 +98,7 @@ export const serviceDetailsColumns: TableColumn<ServiceCostTable>[] = [
             const total = info.row.values.quantity * info.row.values.priceGross;
             return (
                 <>
-                    {total} {getCellCurrency(info)}
+                    {total.toFixed(2)} {getCellCurrency(info)}
                 </>
             );
         },
