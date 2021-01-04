@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -10,4 +10,15 @@
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
  */
 
-module.exports = () => {};
+const enforceHttps = require("koa-sslify");
+
+module.exports = (cb) => {
+  // Force HTTPS on all page
+  strapi.app.use(
+    enforceHttps({
+      trustProtoHeader: true,
+    })
+  );
+
+  cb();
+};
