@@ -12,7 +12,6 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
-    "koa-sslify": "^4.0.3",
     "pg": "latest",
     "sharp": "^0.26.3",
     "strapi": "3.3.3",

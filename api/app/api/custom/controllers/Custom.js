@@ -4,7 +4,7 @@ module.exports = {
   async logout(ctx) {
     ctx.cookies.set("token", null, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: false,
       maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
       domain: process.env.CLIENT_DOMAIN || "localhost",
     });
