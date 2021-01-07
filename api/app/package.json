@@ -12,6 +12,8 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
+    "lodash.get": "^4.4.2",
+    "pdfmake": "^0.1.69",
     "pg": "latest",
     "sharp": "^0.26.3",
     "strapi": "3.3.3",
