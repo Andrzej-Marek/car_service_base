@@ -8,84 +8,13 @@ const {
   generateSubHeader,
   generatePhotosContent,
   generateCostTable,
-} = require("../utils/pdfMethods");
+} = require("../../api/custom/utils/pdfMethods");
 const {
   prepareServiceRaportToPdfExport,
 } = require("../utils/prepareServiceRaportToPdfExport");
 const { format } = require("date-fns");
 
-const mapPaymentMethod = (paymentMethod) => {
-  const config = {
-    CASH: "Gotówka",
-    CREADIT_CARD: "Karta kredytowa",
-    PAYMENT_CARD: "Karta płatnicza",
-    BANK_TRANSFER: "Przelew bankowy",
-    OTHER: "Inne",
-  };
-
-  return config[paymentMethod] || "-";
-};
-
-const fontPath = (fontType) =>
-  path.join(__dirname, "..", "..", "..", "shared", `/fonts/${fontType}.ttf`);
-
-const fonts = {
-  Roboto: {
-    normal: fontPath("Roboto-Regular"),
-    bold: fontPath("Roboto-Bold"),
-    italics: fontPath("Roboto-Italic"),
-    bolditalics: fontPath("Roboto-BoldItalic"),
-  },
-};
-
-const styles = {
-  header: {
-    fontSize: 22,
-    bold: true,
-    margin: [0, 0, 0, 20],
-  },
-  subheader: {
-    fontSize: 15,
-    bold: true,
-    margin: [0, 20, 0, 10],
-  },
-  quote: {
-    italics: true,
-  },
-  small: {
-    fontSize: 8,
-  },
-
-  listValue: {
-    bold: true,
-    lineHeight: 1.5,
-  },
-  table: {},
-  tableHeader: {
-    bold: true,
-    margin: [0, 5, 0, 5],
-  },
-  tableSummary: {
-    margin: [0, 5, 0, 5],
-    fontSize: 14,
-    alignment: "right",
-  },
-};
-
-const formatError = (error) => [
-  { messages: [{ id: error.id, message: error.message, field: error.field }] },
-];
-
-const formatDate = (date) => {
-  if (!date) {
-    return;
-  }
-  return format(new Date(date), "dd/MM/yyyy");
-};
-
-module.exports = {
-  async servicePdfRaport(ctx) {
-    const raportNumber = ctx.params.id;
+export const generateServiceRaport = (raportNumber ) => {
     const printer = new PdfPrinter(fonts);
     const fileLocation = path.resolve(
       __dirname,
@@ -267,9 +196,7 @@ module.exports = {
           columns: [
             ...generateKeyValue(
               "Płatność",
-              mapPaymentMethod(
-                preparedService.other_informations.payment_method
-              ),
+              preparedService.other_informations.payment_method,
               true
             ),
             ...generateKeyValue(
@@ -296,6 +223,6 @@ module.exports = {
     // ctx.type = "application/pdf";
     // const stream = fs.createReadStream(fileLocation);
 
-    ctx.send({ url: `/pdfs/${raportNumber}.pdf` });
-  },
-};
+
+    return `/pdfs/${raportNumber}.pdf`
+}

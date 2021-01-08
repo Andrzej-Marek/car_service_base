@@ -108,7 +108,7 @@ const generateCostListRows = (costs_list) => {
       cost.title,
       cost.quantity,
       cost.price_net,
-      cost.tax_rate,
+      cost.tax_rate + "%",
       cost.price_gross,
       cost.total,
     ])

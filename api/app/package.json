@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "date-fns": "^2.16.1",
     "knex": "<0.20.0",
     "lodash.get": "^4.4.2",
     "pdfmake": "^0.1.69",

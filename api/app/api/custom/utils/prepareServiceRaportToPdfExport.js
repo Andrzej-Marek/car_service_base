@@ -29,8 +29,8 @@ const prepareServiceRaportToPdfExport = (raport) => {
       production_year:
         get(raport, "vehicle_details.production_year", "-") || "-",
       mileage: {
-        mileage: get(raport, "vehicle_details.model", "-") || "-",
-        unit: get(raport, "vehicle_details.unit") || "",
+        mileage: get(raport, "vehicle_details.mileage.mileage", "-") || "-",
+        unit: get(raport, "vehicle_details.mileage.unit") || "",
       },
     },
     other_informations: {
