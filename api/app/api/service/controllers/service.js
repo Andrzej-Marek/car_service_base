@@ -6,6 +6,9 @@
  */
 
 const { sanitizeEntity } = require("strapi-utils");
+const {
+  generateServiceRaport,
+} = require("../../../shared/utils/generateServiceRaport");
 
 module.exports = {
   async findOne(ctx) {
@@ -26,6 +29,7 @@ module.exports = {
         company: ctx.state.user.company,
       });
     }
+    await generateServiceRaport(entity.service_id);
     return sanitizeEntity(entity, { model: strapi.models.service });
   },
 
@@ -37,5 +41,21 @@ module.exports = {
     return results.map((entity) =>
       sanitizeEntity(entity, { model: strapi.models.service })
     );
+  },
+
+  async update(ctx) {
+    const { id } = ctx.params;
+
+    let entity;
+    if (ctx.is("multipart")) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.service.update({ id }, data, {
+        files,
+      });
+    } else {
+      entity = await strapi.services.service.update({ id }, ctx.request.body);
+    }
+    await generateServiceRaport(entity.service_id);
+    return sanitizeEntity(entity, { model: strapi.models.service });
   },
 };

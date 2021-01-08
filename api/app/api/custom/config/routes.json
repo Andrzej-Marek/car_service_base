@@ -9,11 +9,6 @@
             "method": "GET",
             "path": "/users/me",
             "handler": "Custom.me"
-        },
-        {
-            "method": "POST",
-            "path": "/raport/pdf/:id",
-            "handler": "GenerateRaport.servicePdfRaport"
         }
     ]
 }
