@@ -207,7 +207,10 @@ const generateServiceRaport = async (raportNumber) => {
           ),
           ...generateKeyValue(
             "Przebieg",
-            `${preparedService.vehicle_details.mileage.mileage} ${preparedService.vehicle_details.mileage.unit}`
+            `${preparedService.vehicle_details.mileage.mileage} ${
+              preparedService.vehicle_details.mileage.mileage &&
+              preparedService.vehicle_details.mileage.unit.toLowerCase()
+            }`
           ),
         ],
       },
